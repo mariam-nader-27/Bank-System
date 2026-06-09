@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1780971949 source:c:\bank-system\bank-system\testproject\main.cpp
+	<iostream>
+	"Person.h"
+
+1780969612 c:\bank-system\bank-system\testproject\person.h
+	<iostream>
+	<string>
+

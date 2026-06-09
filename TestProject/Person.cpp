@@ -1,54 +1,38 @@
 #include "Person.h"
+#include <iostream>
+using namespace std;
 
-Person::Person(int id, string name, string password)
-{
+Person::Person(int id, string name, string password) {
     this->id = id;
     this->name = name;
     this->password = password;
 }
 
-void Person::setId(int id)
- {
+void Person::setId(int id) {
     this->id = id;
 }
 
 void Person::setName(string name) {
-    if (Validation::isValidName(name)) {
-        this->name = name;
-    } else {
-        cout << "Invalid Name! Must be between 3-20 characters" << endl;
-    }
+    this->name = name;
 }
 
-void Person::setPassword(string password)
- {
-    if (Validation::isValidPassword(password))
-        {
-        this->password = password;
-        }
-    else
-        {
-        cout << "Invalid Password! Must be between 8-20 characters" << endl;
-    }
+void Person::setPassword(string password) {
+    this->password = password;
 }
 
-int Person::getId()
- {
+int Person::getId() {
     return id;
 }
 
-string Person::getName()
-{
+string Person::getName() {
     return name;
 }
 
-string Person::getPassword()
-{
+string Person::getPassword() {
     return password;
 }
 
-void Person::display()
-{
+void Person::display() {
     cout << "ID: " << id << endl;
     cout << "Name: " << name << endl;
 }
