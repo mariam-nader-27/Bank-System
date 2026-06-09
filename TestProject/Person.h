@@ -2,25 +2,63 @@
 #define PERSON_H
 #include <iostream>
 #include <string>
+#include "Validation.h"
+
 using namespace std;
 
-class Person {
+class Person
+{
 protected:
     int id;
     string name;
     string password;
 
 public:
-    Person(int id, string name, string password);
+    Person(int id, string name, string password)
+    {
+        this->id = id;
+        setName(name);
+        setPassword(password);
+    }
 
-    void setId(int id);
-    void setName(string name);
-    void setPassword(string password);
+    void setName(string name)
+    {
+        if (Validation::ValidName(name))
+        {
+            this->name = name;
+        }
+        else
+        {
+            cout << "The name must be 3-20 alphabetic characters." << endl;
+        }
+    }
 
-    int getId();
-    string getName();
-    string getPassword();
-    void display();
+    void setPassword(string password) {
+        if (Validation::ValidPassword(password)) {
+            this->password = password;
+        } else {
+            cout << "The Password Must be 8-20 characters." << endl;
+        }
+    }
+
+    int getId()
+    {
+         return id;
+    }
+    string getName()
+    {
+        return name;
+    }
+    string getPassword()
+    {
+        return password;
+    }
+
+    void display()
+    {
+        cout << "ID: " << id << endl;
+        cout << "Name: " << name << endl;
+    }
 };
 
 #endif

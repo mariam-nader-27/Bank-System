@@ -1,30 +1,55 @@
-
 #ifndef CLIENT_H
 #define CLIENT_H
-
-#include <iostream>
-#include <string>
 #include "Person.h"
 
-using namespace std;
-
-class Client : public Person{
+class Client : public Person
+{
 private:
-	double balance;
+    double balance;
+
 public:
-	Client(int id, string name, string password, double balance);
+    Client(int id, string name, string password, double balance) : Person(id, name, password)
+    {
+        setBalance(balance);
+    }
 
-	void setBalance(double balance);
-	double getBalance();
+    void setBalance(double balance)
+    {
+        if (Validation::ValidBalance(balance))
+        {
+            this->balance = balance;
+        }
+        else
+        {
+            cout << "Invalid Balance! Minimum balance must be 1500." << endl;
+        }
+    }
 
-	void deposit(double amount);
-	void withdraw(double amount);
-	void transferTo(double amount, Client& recipient);
+    double getBalance()
+    {
+         return balance;
+    }
 
-	void checkBalance();
+    void deposit(double amount)
+    {
+        balance += amount;
+        cout << "Deposited: " << amount << ". New Balance: " << balance << endl;
+    }
 
-	void display();
+    void withdraw(double amount)
+    {
+        if (balance - amount >= 1500) {
+            balance -= amount;
+            cout << "Withdrew: " << amount << ". New Balance: " << balance << endl;
+        } else {
+            cout << "Withdraw denied! Minimum balance of 1500 must be maintained." << endl;
+        }
+    }
 
+    void display() {
+        Person::display();
+        cout << "Balance: " << balance << endl;
+    }
 };
 
 #endif

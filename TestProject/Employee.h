@@ -4,7 +4,8 @@
 #define EMPLOYEE_H
 #include "Person.h"
 
-class Employee : public Person {
+class Employee : public Person
+{
 private:
     double salary;
 
