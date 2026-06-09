@@ -1,9 +1,25 @@
 # depslib dependency file v1.0
-1780971949 source:c:\bank-system\bank-system\testproject\main.cpp
+1781017204 source:c:\bank-system\bank-system\testproject\main.cpp
 	<iostream>
-	"Person.h"
+	"Client.h"
 
 1780969612 c:\bank-system\bank-system\testproject\person.h
 	<iostream>
 	<string>
+
+1781017030 source:c:\bank-system\bank-system\testproject\person.cpp
+	"Person.h"
+	"Validation.h"
+
+1781016091 c:\bank-system\bank-system\testproject\validation.h
+	<iostream>
+	<string>
+
+1781017447 c:\bank-system\bank-system\testproject\client.h
+	<iostream>
+	<string>
+	"Person.h"
+
+1781017017 source:c:\bank-system\bank-system\testproject\client.cpp
+	"Client.h"
 
