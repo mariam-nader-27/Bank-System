@@ -4,7 +4,7 @@
 
 class Client : public Person
 {
-private:
+protected:
     double balance;
 
 public:
@@ -21,7 +21,7 @@ public:
         }
         else
         {
-            cout << "Invalid Balance! Minimum balance must be 1500." << endl;
+            cout << "Minimum balance must be at least 1500." << endl;
         }
     }
 
@@ -36,13 +36,39 @@ public:
         cout << "Deposited: " << amount << ". New Balance: " << balance << endl;
     }
 
+    void transferTo(double amount, Client& recipient)
+    {
+        if (amount <= 0)
+        {
+            cout << "Invalid Amount" << endl;
+            return;
+        }
+
+        if (balance - amount >= 1500)
+        {
+            balance -= amount;
+            recipient.balance += amount;
+        }
+        else
+        {
+            cout << "Transfer Failed" << endl;
+        }
+    }
+
+    void checkBalance()
+    {
+        cout << "Balance: " << balance << endl;
+    }
     void withdraw(double amount)
     {
-        if (balance - amount >= 1500) {
+        if (balance - amount >= 1500)
+        {
             balance -= amount;
             cout << "Withdrew: " << amount << ". New Balance: " << balance << endl;
-        } else {
-            cout << "Withdraw denied! Minimum balance of 1500 must be maintained." << endl;
+        }
+        else
+        {
+            cout << "Minimum balance of 1500 must be maintained." << endl;
         }
     }
 
