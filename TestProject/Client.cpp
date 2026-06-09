@@ -2,7 +2,7 @@
 
 
 Client::Client(int id, string name, string password, double balance) :
-	Person(id, name, password),    balance(balance)
+	Person(id, name, password),  balance(balance)
 {
 }
 

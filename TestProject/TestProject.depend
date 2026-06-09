@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1781017204 source:c:\bank-system\bank-system\testproject\main.cpp
+1781022415 source:c:\bank-system\bank-system\testproject\main.cpp
 	<iostream>
 	"Client.h"
+	"Employee.h"
 
 1780969612 c:\bank-system\bank-system\testproject\person.h
 	<iostream>
@@ -20,6 +21,12 @@
 	<string>
 	"Person.h"
 
-1781017017 source:c:\bank-system\bank-system\testproject\client.cpp
+1781021343 source:c:\bank-system\bank-system\testproject\client.cpp
 	"Client.h"
+
+1781022456 c:\bank-system\bank-system\testproject\employee.h
+	"Person.h"
+
+1781022666 source:c:\bank-system\bank-system\testproject\employee.cpp
+	"Employee.h"
 
